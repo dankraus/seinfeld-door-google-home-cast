@@ -26,13 +26,30 @@ app.post('/door', urlencodedParser, function (req, res){
     var riffUrl = riffs[Math.floor(Math.random()*riffs.length)];
     
     if(ip) {
-        googleHomeUrlCaster.castUrl('192.168.1.215', riffUrl, function(result, err){
+        googleHomeUrlCaster.castUrl(ip, riffUrl, function(result, err){
             if(!err) {
-                res.send('Played ' + riffUrl + ' on 192.168.1.215');
+                res.send('Played ' + riffUrl + ' on '+ ip);
             }
         });
     } else {
         res.status(400).send('Please POST "ip=192.168.1.215"');
+    }
+});
+
+app.post('/url', urlencodedParser, function (req, res){
+    var ip = req.body.ip;
+    var url = req.body.url;
+
+    console.log('POST /url');
+    
+    if(ip && url) {
+        googleHomeUrlCaster.castUrl(ip, url, function(result, err){
+            if(!err) {
+                res.send('Played ' + url + ' on ' + ip);
+            }
+        });
+    } else {
+        res.status(400).send('Please POST "ip=192.168.1.215&url=https://s3-us-west-2.amazonaws.com/blog-spokeo-test/seinfeld.mp3"');
     }
 });
 
