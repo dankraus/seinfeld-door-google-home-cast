@@ -1,0 +1,27 @@
+{
+  "name": "seinfeld-door-google-home-cast",
+  "version": "1.0.0",
+  "description": "HTTP Server to cast bass riff transitions from Seinfeld to Google Home",
+  "main": "app.js",
+  "repository": "dankraus/seinfeld-door-google-home-cast",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "seinfeld",
+    "google",
+    "home",
+    "smartthings",
+    "hub",
+    "cast"
+  ],
+  "author": "Dan Kraus",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "castv2-client": "^1.2.0",
+    "express": "^4.14.1",
+    "mdns": "^2.3.3",
+    "ngrok": "^2.2.6"
+  }
+}
