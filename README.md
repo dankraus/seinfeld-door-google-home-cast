@@ -1,6 +1,6 @@
 #Seinfeld Door Bass Riff Google Home Cast
 
-Casts a random Seinfeld transition bass riff through a Google Home device on your network.
+Casts a random Seinfeld transition bass riff or a HTTPS accessible MP3 through a Google Home device on your network.
 
 ##Usage
 Run `node app.js` first time and it will log the castable devices to your network. 
