@@ -1,7 +1,7 @@
 #Seinfeld Door Bass Riff SmartThings and Google Home Cast
 
 Casts a random Seinfeld transition bass riff or a HTTPS accessible MP3 through a Google Home device on your network. Can run on its own
-or triggered with a custom SmartThings app.
+or triggered with the included custom SmartThings app.
 
 ##Usage
 
