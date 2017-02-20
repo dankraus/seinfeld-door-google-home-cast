@@ -14,8 +14,8 @@ that was logged to the console. You don't need the port number. Ex:
 
 `curl -X POST -d "ip=192.168.1.215" https://1234.ngrok.io/door`
 
-Your Google Home will play a chime sound when the connection is made and then play a random MP3 from the `riffs` array in
-`app.js`
+Your Google Home will play a chime sound when the connection is made and then play a random numbered MP3 from a storage bucket. 
+*Please use your own MP3s!*
 
 You can also play any MP3 from a URL with:
 

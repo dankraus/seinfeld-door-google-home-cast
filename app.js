@@ -8,7 +8,7 @@ var app = express();
 var serverPort = 3000;
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-var riffs = ['https://s3-us-west-2.amazonaws.com/blog-spokeo-test/seinfeld.mp3'];
+var riffCount = 90;
 
 
 googleHomeUrlCaster.getCastDevices();
@@ -23,7 +23,8 @@ app.post('/door', urlencodedParser, function (req, res){
 
     console.log('POST /door');
 
-    var riffUrl = riffs[Math.floor(Math.random()*riffs.length)];
+    var trackNumber = Math.floor(Math.random() * riffCount) + 1;
+    var riffUrl = 'https://storage.googleapis.com/seinfeld-riffs/Dan%20Seinfeld%20' + trackNumber + '.mp3';
     
     if(ip) {
         googleHomeUrlCaster.castUrl(ip, riffUrl, function(result, err){
