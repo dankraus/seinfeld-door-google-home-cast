@@ -25,7 +25,9 @@ Please note that the MP3 MUST be served over HTTPS.
 
 ###SmartThings
 Set up an API account according to the SmartThings docs. Go to My SmartApps>New SmartApp. 
-Click the "From Code" tab, copy and paste the contents of `smartthings-app-seinfeld-door-entrance.groovy` and click 'Create'.
+Click the "From Code" tab, copy and paste the contents of `smartthings-app-seinfeld-door-entrance.groovy` and click 'Create'. 
+Make sure the door sensor reads CLOSED before installing the app. The app will play the music every other time the door opens so 
+that when you open the door to exit the sound doesn't play but will play on entrance.
 From the SmartThings app, go to Automation>SmartApps>Add a SmartApp>My Apps and select Seinfeld Door Entrance. 
 Enter the ngrok address from the node app setup and the IP address of the Google Home you wish to cast too. Then select your door sensor.
 

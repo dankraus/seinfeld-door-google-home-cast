@@ -48,23 +48,29 @@ def updated() {
 }
 
 def initialize() {
+    state.isEntering = true;
+
 	subscribe(door, "contact.open", doorOpenHandler)
 }
 
 def doorOpenHandler(evt) {
 	log.info "Door Open Handler: ${evt}"
-    
-    try {
-    	def url = "$nodeAppBaseAddress/door"
-        def postParams = "ip=$googleHomeIP"
+    state.isEntering = !state.isEntering;
 
-        httpPost(
-	        uri: url,
-    	    body: [ip: googleHomeIP],
-        ) { 
-        	response -> log.debug "Played Seinfeld riff. Response data: ${resp.data}"
+    if(state.isEntering) {
+
+        try {
+            def url = "$nodeAppBaseAddress/door"
+            def postParams = "ip=$googleHomeIP"
+
+            httpPost(
+                uri: url,
+                body: [ip: googleHomeIP],
+            ) { 
+                response -> log.debug "Played Seinfeld riff. Response data: ${resp.data}"
+            }
+        } catch (e) {
+            log.debug "Call to NodeJS app failed: ${e}"
         }
-    } catch (e) {
-    	log.debug "Call to NodeJS app failed: ${e}"
     }
 }
