@@ -1,11 +1,13 @@
-#Seinfeld Door Bass Riff SmartThings and Google Home Cast
+# Seinfeld Door Bass Riff SmartThings and Google Home Cast
 
 Casts a random Seinfeld transition bass riff or a HTTPS accessible MP3 through a Google Home device on your network. Can run on its own
 or triggered with the included custom SmartThings app.
 
-##Usage
+[Demo Video](https://www.youtube.com/watch?v=5SS2AmVASY4&t=5s)
 
-###Node
+## Usage
+
+### Node
 Run `node app.js` first time and it will log the castable devices to your network. 
 The app will run at `http://localhost:3000` and also a publiclly available address via ngrok like `https://1234.ngrok.io`.
 
@@ -23,7 +25,7 @@ You can also play any MP3 from a URL with:
 
 Please note that the MP3 MUST be served over HTTPS.
 
-###SmartThings
+### SmartThings
 Set up an API account according to the SmartThings docs. Go to My SmartApps>New SmartApp. 
 Click the "From Code" tab, copy and paste the contents of `smartthings-app-seinfeld-door-entrance.groovy` and click 'Create'. 
 Make sure the door sensor reads CLOSED before installing the app. The app will play the music every other time the door opens so 
